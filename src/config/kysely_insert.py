@@ -8,7 +8,7 @@ def certificate_lisaa_rivi(name, person_id):
     try:
         con = psycopg2.connect(**config())
         cur = con.cursor()
-        SQL = "INSERT INTO certificates (name, person_id) VALUES (%s,%s) RETURNING *;"
+        SQL = "INSERT INTO naamataulu (name, person_id) VALUES (%s,%s) RETURNING *;"
         val = (name, person_id)
         cur.execute(SQL, val)
 
