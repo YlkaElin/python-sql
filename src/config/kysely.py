@@ -18,6 +18,5 @@ def kysely():
         if con is not None:
             con.close()
 
-
 if __name__ == "__main__":
     kysely()          
