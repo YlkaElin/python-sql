@@ -6,9 +6,9 @@ con = None
 try:
     con = psycopg2.connect(**config())
     cursor = con.cursor()
-    SQL = 'SELECT * FROM person;'
-    cursor.execute(SQL)
+    cursor.execute("SELECT * FROM person;")
     cursor.fetchone()
+
     cursor.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
