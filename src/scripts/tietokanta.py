@@ -1,4 +1,6 @@
 
+import psycopg2
+from config.config import config
 con = None
 
 try:
