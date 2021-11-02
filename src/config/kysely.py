@@ -2,15 +2,13 @@
 import psycopg2
 from config import config
 
-
 con = None
 try:
     con = psycopg2.connect(**config())
     cursor = con.cursor()
     SQL = 'SELECT * FROM person;'
     cursor.execute(SQL)
-    row = cursor.fetchone()
-    print(row)
+    cursor.fetchone()
     cursor.close()
 except (Exception, psycopg2.DatabaseError) as error:
     print(error)
